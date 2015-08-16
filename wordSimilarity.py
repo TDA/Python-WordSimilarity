@@ -26,11 +26,15 @@ def gen_similar_words(word):
     similar_words = set()
     new_word = word
     for letter in word:
+        if letter not in l33t_words_to_letters_map:
+            continue
         for leet_letter in l33t_words_to_letters_map[letter.lower()]:
             new_word = new_word.replace(letter, leet_letter)
             similar_words.add(new_word)
     new_word = word
     for letter in reversed(word):
+        if letter not in l33t_words_to_letters_map:
+            continue
         for leet_letter in l33t_words_to_letters_map[letter.lower()]:
             new_word = new_word.replace(letter, leet_letter)
             similar_words.add(new_word)
@@ -39,4 +43,4 @@ def gen_similar_words(word):
 
 
 
-gen_similar_words('suyoce')
+gen_similar_words('suyoce1234')
